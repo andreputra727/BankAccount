@@ -1,0 +1,29 @@
+public class Main {
+    public static void main(String[] args) {
+        // Membuat dua objek BankAccount dengan constructor berbeda
+        BankAccount akun1 = new BankAccount("123456789", "Andre Syaputra", 600000, "Tabungan");
+        BankAccount akun2 = new BankAccount("987654321", "Windah Brando", "Giro");
+
+        // Menampilkan informasi awal akun
+        System.out.println("=== Informasi Awal Akun ===");
+        akun1.displayInfo();
+        akun2.displayInfo();
+
+        // Melakukan transaksi deposit, withdraw, dan transfer
+        System.out.println("=== Transaksi Akun 1 ===");
+        akun1.deposit(200000);
+        akun1.withdraw(100000);
+        akun1.displayInfo();
+
+        System.out.println("=== Transaksi Akun 2 ===");
+        akun2.deposit(300000);
+        akun2.withdraw(50000);
+        akun2.displayInfo();
+
+        // Melakukan transfer
+        System.out.println("=== Transfer dari Akun 1 ke Akun 2 ===");
+        akun1.transfer(akun2, 150000);
+        akun1.displayInfo();
+        akun2.displayInfo();
+    }
+}
